@@ -30,7 +30,7 @@ public class VideoGameService {
     }
 
 
-  //  public Optional<VideoGame> getVideoGameById(Integer id) {
-    //    return videoGameRepository.findAllById();
-    //}
+    public Optional<VideoGame> getVideoGameById(Integer id) {
+        return videoGameRepository.findById(id);
+    }
 }
