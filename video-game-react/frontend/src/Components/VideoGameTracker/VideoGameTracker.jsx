@@ -20,7 +20,15 @@ const VideoGameTracker = ({videoGames}) => {
     console.log('Distinct Platforms', distinctPlatforms)
 
     let platformArrays = distinctPlatforms.map(platform =>{ 
-      return [platform, 10,'silver']
+      let allGamesforPlatform = filteredGames.filter(game => game.platform == platform)
+      let totalSales = 0
+      allGamesforPlatform.map(game => {
+        totalSales += game.globalsales
+      })
+        console.log('global' ,totalSales);
+      //now we need to loop through allGamesforPlatform and sum games global sales
+      //once we have the sum of all those games global sales use variable created instead of hard coded '10'
+      return [platform, totalSales,'silver']
     });
     console.log('Platform Arrays', platformArrays)
 
