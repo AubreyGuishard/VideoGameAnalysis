@@ -19,16 +19,19 @@ const VideoGameTracker = ({videoGames}) => {
     let distinctPlatforms = [...new Set(platforms)]
     console.log('Distinct Platforms', distinctPlatforms)
 
+    let platformArrays = distinctPlatforms.map(platform =>{ 
+      return [platform, 10,'silver']
+    });
+    console.log('Platform Arrays', platformArrays)
+
     console.log(videoGames);
 
 
      const data = [
       ["Platform", "Sales", { role: "style" }],
-      ["Copper", 8.94, "silver"], 
-      ["Silver", 10.49, "silver"], 
-      ["Gold", 19.3, "silver"],
-      ["Platinum", 21.45, "silver"], 
+      ...platformArrays
     ];
+    console.log(data)
     return data;
   }
     return ( <Chart
