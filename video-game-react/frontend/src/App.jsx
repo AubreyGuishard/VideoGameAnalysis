@@ -3,6 +3,8 @@ import './App.css';
 import Header from './Components/Header/Header';
 import SearchBar from './Components/SearchBar/SearchBar';
 import VideoGameTracker from './Components/VideoGameTracker/VideoGameTracker';
+import axios from "axios";
+
 function App() {
 
   const [videoGames, setVideoGames] = useState([]);
@@ -13,8 +15,8 @@ function App() {
 
   async function getVideogames(){
     try{
-      debugger;
       const response = await axios.get('http://localhost:8080/all');
+      console.log(response.data)
       setVideoGames(response.data);
     } catch(exception){
       console.log(`EROR in getVideoGames EXCEPTION: ${exception}`)
@@ -26,7 +28,7 @@ function App() {
 
       <Header/>
       <SearchBar/>
-      <VideoGameTracker/>
+      <VideoGameTracker videoGames={videoGames}/>
     </div>
   
   );
