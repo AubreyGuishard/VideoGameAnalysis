@@ -4,24 +4,23 @@ import Header from '../Header/Header';
 import SearchBar from '../SearchBar/SearchBar';
 import VideoGameTracker from '../VideoGameTracker/VideoGameTracker';
 
-const VideoGamePage = ({}) => {
+const VideoGamePage = ({games}) => {
     const [videoGames, setVideoGames] = useState([]);
+     
+     const[filteredVideoGames, setFilteredVideoGames] = useState(games)
 
-  async function fetchVideoGames(query){
-    try{
-      let response = await axios.get(`http://localhost:8080/all`);
-      console.log(response.data)
-      setVideoGames(response.data);
-    } catch(error){
-      console.log(error.response.data)
-    }
+     useEffect(()=> {
+        setFilteredVideoGames(videoGames)
+     },[games])
 
-  }
+    
+
+
     return ( 
     <div>
 
         <Header/>
-        <VideoGameTracker videoGames={videoGames}/>
+
        
       </div> 
       );
