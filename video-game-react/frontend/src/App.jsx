@@ -42,10 +42,11 @@ function App() {
       </div>
       <Header />
       <VideoGameTracker videoGames={videoGames} />
+      <StatsTracker filteredVideoGames={filteredVideoGames}/>
       <SearchBar onSubmit={handleSearch} /> 
       <SearchResults filteredVideoGames={filteredVideoGames}/>
 
-      <StatsTracker filteredVideoGames={filteredVideoGames}/>
+
     </div>
   );
 }
