@@ -5,6 +5,7 @@ import SearchBar from "./Components/SearchBar/SearchBar";
 import VideoGameTracker from "./Components/VideoGameTracker/VideoGameTracker";
 import axios from "axios";
 import SearchResults from "./Components/SearchResults/SearchResults";
+import StatsTracker from "./Components/StatsTracker/StatsTracker";
 
 function App() {
   const [videoGames, setVideoGames] = useState([]);
@@ -30,11 +31,21 @@ function App() {
     setFilteredVideoGames(newFilteredGames);
   };
   return (
-    <div>
+    <div className="container-fluid">
+      <div className="row">
+        <div className="col-md-6">
+
+        </div>
+        <div className="col-md-6">
+
+        </div>
+      </div>
       <Header />
       <VideoGameTracker videoGames={videoGames} />
       <SearchBar onSubmit={handleSearch} /> 
       <SearchResults filteredVideoGames={filteredVideoGames}/>
+
+      <StatsTracker filteredVideoGames={filteredVideoGames}/>
     </div>
   );
 }
