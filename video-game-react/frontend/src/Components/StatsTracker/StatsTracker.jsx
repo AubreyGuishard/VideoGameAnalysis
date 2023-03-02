@@ -40,6 +40,8 @@ const StatsTracker = ({ filteredVideoGames }) => {
     is3D: true,
   };
   return (
+  <div> 
+   {filteredVideoGames.length > 0 ? 
     <Chart
       chartType="PieChart"
       data={generateSalesForm()}
@@ -47,6 +49,9 @@ const StatsTracker = ({ filteredVideoGames }) => {
       width={"100%"}
       height={"400px"}
     />
+    : null 
+   }
+    </div>
   );
 };
 
