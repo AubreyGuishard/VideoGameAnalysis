@@ -36,7 +36,7 @@ const StatsTracker = ({ filteredVideoGames }) => {
   }, [filteredVideoGames]);
 
   const options = {
-    title: "SALES FOR EACH COUNTRY",
+    title: "SALES FOR EACH REGION",
     is3D: true,
   };
   return (
