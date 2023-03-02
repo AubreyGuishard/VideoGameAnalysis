@@ -10,7 +10,7 @@ const SearchResults = ({ filteredVideoGames }) => {
       <td>{game.year}</td>
       <td>{game.genre}</td>
       <td>{game.publisher}</td>
-      <button>button</button>
+      {/* <button>button</button> */}
     </tr>
   ));
   return (
