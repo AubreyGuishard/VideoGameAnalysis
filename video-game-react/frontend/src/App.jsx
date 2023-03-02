@@ -6,7 +6,7 @@ import VideoGameTracker from "./Components/VideoGameTracker/VideoGameTracker";
 import axios from "axios";
 import SearchResults from "./Components/SearchResults/SearchResults";
 import StatsTracker from "./Components/StatsTracker/StatsTracker";
-
+import { Routes, Route } from "react-router-dom";
 function App() {
   const [videoGames, setVideoGames] = useState([]);
   const [filteredVideoGames, setFilteredVideoGames] = useState([]);
@@ -32,14 +32,17 @@ function App() {
   };
   return (
     <div className="container-fluid">
-      <div className="row">
+      {/* <div className="row">
         <div className="col-md-6">
 
         </div>
         <div className="col-md-6">
 
         </div>
-      </div>
+      </div> */}
+      <Routes>
+        
+      </Routes>
       <SearchBar onSubmit={handleSearch} /> 
       <Header />
       <VideoGameTracker videoGames={videoGames} />
