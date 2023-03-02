@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-
+// import './SearchResults.css';
+import Table from 'react-bootstrap/Table'
 const SearchResults = ({ filteredVideoGames }) => {
   let gameRows = filteredVideoGames.map((game) => (
     <tr>
@@ -14,7 +15,7 @@ const SearchResults = ({ filteredVideoGames }) => {
   ));
   return (
     <div>
-      <table>
+      <Table variant="dark" hover>
         <thead>
           <tr>
             <th>Name</th>
@@ -26,7 +27,7 @@ const SearchResults = ({ filteredVideoGames }) => {
           </tr>
         </thead>
         <tbody>{gameRows}</tbody>
-      </table>
+      </Table>
     </div>
   );
 };

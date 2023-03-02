@@ -40,10 +40,10 @@ function App() {
 
         </div>
       </div>
+      <SearchBar onSubmit={handleSearch} /> 
       <Header />
       <VideoGameTracker videoGames={videoGames} />
       <StatsTracker filteredVideoGames={filteredVideoGames}/>
-      <SearchBar onSubmit={handleSearch} /> 
       <SearchResults filteredVideoGames={filteredVideoGames}/>
 
 
