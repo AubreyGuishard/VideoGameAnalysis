@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Container from "react-bootstrap/Container"
+import "./SearchBar.css"
 
 const SearchBar = ({onSubmit}) => {
     const[searchKeyword, setSearchKeyword]= useState('')
@@ -10,7 +11,7 @@ const SearchBar = ({onSubmit}) => {
 
     return ( 
     <Container fluid>
-        <form onSubmit={handleSubmit}>
+        <form id="searchBar" onSubmit={handleSubmit}>
             <label> Search For Game </label>
             <input type="search"  value={searchKeyword} onChange={(event)=>
                  setSearchKeyword(event.target.value)}
